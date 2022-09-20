@@ -9,9 +9,9 @@ import { clothing } from './clothes';
 })
 export class ClothesListComponent implements OnInit {
 
-   
-  //tipar objeto 
-  //clothes -> objeto, clothing -> es la interface que aclara de que tipo es 
+
+  //tipar objeto
+  //clothes -> objeto, clothing -> es la interface que aclara de que tipo es
   clothes: clothing[] = [
     {
       name: 'Jeans Clad Light',
@@ -39,13 +39,8 @@ export class ClothesListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  downQuantity(outfit:clothing):void{
-    if( outfit.quantity >  0)
-        outfit.quantity --;
+  maxReached(m: string){
+      alert(m);
   }
-  upQuantity(outfit:clothing):void{
-    if(outfit.quantity<outfit.stock)
-      outfit.quantity ++;
-  }
- 
+
 }

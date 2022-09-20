@@ -12,20 +12,17 @@
     </thead>
     <tbody>
         <tr *ngFor="let outfit of  clothes" [ngClass]="{'clearance':outfit.clearance}">
-            
             <td> <img class="imagesEstilo" [src]="outfit.images" [alt]="outfit.name"></td>
             <td>{{outfit.name}}</td>
             <td>{{outfit.description}}</td>
             <td>{{outfit.waist}}</td>
             <td>{{outfit.price| currency }}</td>
+
             <td>
-                <button  class="btn btn-primary" (click)="downQuantity(outfit)">-</button>
-                 <input type="text" [(ngModel)]="outfit.quantity">
-                <button  class="btn btn-primary" (click)="upQuantity(outfit)">+</button>
+                <app-input-integer [(quantity)]="outfit.quantity" [max]="outfit.stock" *ngIf="outfit.stock" (maxReached)="maxReached($event)"> </app-input-integer>
             </td>
+
             <td><span class="btn btn-warning" *ngIf="outfit.stock==0">SIN STOCK</span></td>
-            
-            
         </tr>
     </tbody>
 </table>
