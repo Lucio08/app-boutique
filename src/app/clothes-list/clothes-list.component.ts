@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClothesCartService } from '../clothes-cart.service';
+import { ClothesDataService } from '../clothes-data.service';
 import { clothing } from './clothes';
 
 
@@ -12,32 +14,25 @@ export class ClothesListComponent implements OnInit {
 
   //tipar objeto
   //clothes -> objeto, clothing -> es la interface que aclara de que tipo es
-  clothes: clothing[] = [
-    {
-      name: 'Jeans Clad Light',
-      description: 'Jean con parches aplicados en tono más claro.',
-      waist: 'Talle 28, Ancho 40, Largo 106.',
-      price: 4000,
-      stock: 0,
-      images: 'assets/img/jeanss.jpg',
-      clearance: false,
-      quantity:0,
-    },
-    {
-      name: 'Jeans Clad Light',
-      description: 'Jean con parches aplicados en tono más claro.',
-      waist: 'Talle 28, Ancho 40, Largo 106.',
-      price: 4000,
-      stock: 6  ,
-      images: 'assets/img/jeanss.jpg',
-      clearance: true,
-      quantity:0,
-    },
+  clothes: clothing[] = [];
 
-  ];
-  constructor() { }
+  constructor(
+    private cart: ClothesCartService,
+    private clothesDataService: ClothesDataService) {
+
+   }
 
   ngOnInit(): void {
+    this.clothesDataService.getAllClothes()
+    .subscribe(clothes => this.clothes = clothes );
+  }
+
+  addToCart(outfit: clothing):void{
+    if(outfit.stock > 0 && outfit.quantity > 0 && outfit.quantity <= outfit.stock){
+     this.cart.addToCart(outfit);
+     outfit.stock -= outfit.quantity;
+     outfit.quantity = 0;
+    }
   }
   maxReached(m: string){
       alert(m);

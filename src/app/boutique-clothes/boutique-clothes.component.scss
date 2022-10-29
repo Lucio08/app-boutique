@@ -1,0 +1,25 @@
+.row-contenedor{
+  display: grid;
+  padding-top: 2rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "clothes"
+  "cart"
+}
+.component1{
+
+  grid-area: clothes;
+}
+.component2{
+  margin-left: 2rem;
+  grid-area: cart;
+}
+@media screen and (min-width: 660px){
+  .row-contenedor{
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+    "clothes cart";
+
+}
+
+}

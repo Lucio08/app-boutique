@@ -9,6 +9,7 @@ import { BoutiqueAboutComponent } from './boutique-about/boutique-about.componen
 import { BoutiqueClothesComponent } from './boutique-clothes/boutique-clothes.component';
 import { CartComponent } from './cart/cart.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -20,13 +21,14 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     BoutiqueClothesComponent,
     CartComponent,
     InputIntegerComponent,
-  
-    
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
