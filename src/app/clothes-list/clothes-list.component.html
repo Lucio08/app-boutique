@@ -1,29 +1,30 @@
 <table class="table table-borderless">
-    <thead>
-        <tr>
-            <th>Imagen ilustrativa</th>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Talle</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Comprar</th>
-            <th>Stock</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let outfit of  clothes" [ngClass]="{'clearance':outfit.clearance}">
-            <td> <img class="imagesEstilo" [src]="outfit.images" [alt]="outfit.name"></td>
-            <td>{{outfit.name}}</td>
-            <td>{{outfit.description}}</td>
-            <td>{{outfit.waist}}</td>
-            <td>{{outfit.price| currency }}</td>
+  <thead>
+    <tr>
+      <th>Imagen ilustrativa</th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Talle</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Comprar</th>
+      <th>Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let outfit of  clothes" [ngClass]="{'clearance':outfit.clearance}">
+      <td> <img class="imagesEstilo" [src]="outfit.images" [alt]="outfit.name"></td>
+      <td>{{outfit.name}}</td>
+      <td>{{outfit.description}}</td>
+      <td>{{outfit.waist}}</td>
+      <td>{{outfit.price| currency }}</td>
 
-            <td>
-                <app-input-integer [(quantity)]="outfit.quantity" [max]="outfit.stock" *ngIf="outfit.stock" (maxReached)="maxReached($event)"> </app-input-integer>
-            </td>
-            <td><button class="btn btn-secondary" (click)="addToCart(outfit)">Comprar</button></td>
-            <td><span class="btn btn-danger" *ngIf="outfit.stock==0">SIN STOCK</span></td>
-        </tr>
-    </tbody>
+      <td>
+        <app-input-integer [(quantity)]="outfit.quantity" [max]="outfit.stock" *ngIf="outfit.stock"
+          (maxReached)="maxReached($event)"> </app-input-integer>
+      </td>
+      <td><button class="btn btn-secondary" (click)="addToCart(outfit)">Comprar</button></td>
+      <td><span class="btn btn-danger" *ngIf="outfit.stock==0">SIN STOCK</span></td>
+    </tr>
+  </tbody>
 </table>

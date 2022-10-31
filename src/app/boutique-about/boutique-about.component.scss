@@ -1,39 +1,44 @@
-.content{
+.content {
   display: grid;
   grid-template-columns: 1fr;
   margin: 1px;
   grid-template-areas:
-  "logo"
-  "info";
+    "logo"
+    "info";
 }
 
-.logo{
+.logo {
   grid-area: logo;
 }
-.info{
+
+.info {
   grid-area: info;
 }
 
-h2, h3{
+h2,
+h3 {
   font-style: oblique;
 }
-a, li{
+
+a,
+li {
   text-decoration: none;
 }
 
-label{
+label {
   font-weight: bolder;
 }
-p{
-  font-style:oblique;
+
+p {
+  font-style: oblique;
 }
 
-@media screen and (min-width: 660px){
-  .content{
+@media screen and (min-width: 660px) {
+  .content {
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
     "logo info";
 
-}
+  }
 
 }

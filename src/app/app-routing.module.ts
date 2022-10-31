@@ -16,9 +16,6 @@ const routes: Routes = [
   {
     path:'about',
     component: BoutiqueAboutComponent
-  }, {
-    path:'redes',
-    component: BoutiqueAboutComponent
   }
 ];
 
