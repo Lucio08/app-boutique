@@ -11,11 +11,14 @@ const routes: Routes = [
   },
   {
     path:'clothes',
-    component: BoutiqueClothesComponent 
+    component: BoutiqueClothesComponent
   },
   {
     path:'about',
-    component: BoutiqueAboutComponent 
+    component: BoutiqueAboutComponent
+  }, {
+    path:'redes',
+    component: BoutiqueAboutComponent
   }
 ];
 

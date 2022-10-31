@@ -1,0 +1,39 @@
+.content{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 1px;
+  grid-template-areas:
+  "logo"
+  "info";
+}
+
+.logo{
+  grid-area: logo;
+}
+.info{
+  grid-area: info;
+}
+
+h2, h3{
+  font-style: oblique;
+}
+a, li{
+  text-decoration: none;
+}
+
+label{
+  font-weight: bolder;
+}
+p{
+  font-style:oblique;
+}
+
+@media screen and (min-width: 660px){
+  .content{
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+    "logo info";
+
+}
+
+}

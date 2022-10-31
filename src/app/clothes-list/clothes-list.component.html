@@ -1,4 +1,4 @@
-<table class="table table-bordered border-primary">
+<table class="table table-borderless">
     <thead>
         <tr>
             <th>Imagen ilustrativa</th>
@@ -21,10 +21,9 @@
 
             <td>
                 <app-input-integer [(quantity)]="outfit.quantity" [max]="outfit.stock" *ngIf="outfit.stock" (maxReached)="maxReached($event)"> </app-input-integer>
-
             </td>
-            <td><button class="btn btn-primary" (click)="addToCart(outfit)">Comprar</button></td>
-            <td><span class="btn btn-warning" *ngIf="outfit.stock==0">SIN STOCK</span></td>
+            <td><button class="btn btn-secondary" (click)="addToCart(outfit)">Comprar</button></td>
+            <td><span class="btn btn-danger" *ngIf="outfit.stock==0">SIN STOCK</span></td>
         </tr>
     </tbody>
 </table>

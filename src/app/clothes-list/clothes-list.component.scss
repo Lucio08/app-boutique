@@ -1,8 +1,15 @@
   .clearance{
-    border: 2px solid lightgreen;
-    background-color: lightgoldenrodyellow;
+    border: 3px solid black;
+    background-color:lightpink;
 }
 td{
     vertical-align: middle;
-    max-width: 100;
+    width:auto;
+    height: auto;
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif  ;
+}
+.imagesEstilo{
+  height:auto;
+  width:auto;
 }
