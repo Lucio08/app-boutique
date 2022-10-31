@@ -26,4 +26,7 @@ export class ClothesCartService {
     this.cartList.next(this._cartList);
   }
 
+  getCart(){
+    return this._cartList;
+  }
 }
