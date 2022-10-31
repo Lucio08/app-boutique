@@ -13,7 +13,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let outfit of  clothes" [ngClass]="{'clearance':outfit.clearance}">
-      <td> <img [src]="outfit.images" [alt]="outfit.name"></td>
+      <td> <img class="imagesEstilo" [src]="outfit.images" [alt]="outfit.name"></td>
       <td>{{outfit.name}}</td>
       <td>{{outfit.description}}</td>
       <td>{{outfit.waist}}</td>
