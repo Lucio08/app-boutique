@@ -3,13 +3,9 @@
   grid-template-columns: 1fr;
   margin: 2px;
   grid-template-areas:
-    "logo"
     "info";
 }
 
-.logo {
-  grid-area: logo;
-}
 
 .info {
   grid-area: info;
@@ -37,7 +33,7 @@ p {
   .content {
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
-    "logo info";
+    "info";
 
   }
 
